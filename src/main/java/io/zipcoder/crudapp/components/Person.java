@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.data.annotation.PersistenceConstructor;
+
 
 
 @Entity
@@ -17,6 +19,10 @@ public class Person {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
+	public Person(){
+	}
+	
+	@PersistenceConstructor
 	public Person(String firstname, String lastname) {
 		this.firstname = firstname;
 		this.lastname = lastname;

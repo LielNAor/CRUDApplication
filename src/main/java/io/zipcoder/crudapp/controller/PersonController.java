@@ -19,7 +19,8 @@ public class PersonController {
 
 	// Create
 	@RequestMapping(value="/people/create", method= RequestMethod.POST)
-	public Person create (@RequestParam Person person){
+	public Person create (@RequestBody Person person){
+		// repo.save(person);
 		 repo.save(person);
 		return person;
 	}
